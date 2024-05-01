@@ -1,5 +1,6 @@
 :root {
   --blue: #1992d4;
+  --padding-cards: 0.7rem 1rem;
 }
 
 html,
@@ -13,7 +14,7 @@ body {
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 4fr;
-  grid-template-rows: 1fr 5fr;
+  grid-template-rows: 1fr 7fr;
   height: 100vh;
 }
 
@@ -25,6 +26,7 @@ body {
   justify-items: left;
   font-weight: 500;
   font-size: 1rem;
+  height: 100%;
 }
 .dashboard div {
   width: 100%;
@@ -151,7 +153,7 @@ a:visited {
   grid-template-columns: 78px 1fr;
   align-items: center;
   justify-content: end;
-  padding: 0.7rem 1rem;
+  padding: var(--padding-cards);
 }
 
 .user-welcome .profile-picture {
@@ -191,25 +193,26 @@ a:visited {
 }
 
 .projects {
+  padding: var(--padding-cards);
   grid-row: 1/3;
-  padding: 0.7rem 1rem;
+  grid-column: 1/2;
+  height: 100%;
 }
 
 .projects-cards {
   display: grid;
-
-  grid-template-columns: 1fr 1fr;
-  grid-auto-rows: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 20px;
-
-  height: 70vh;
 }
 
 .project-card {
   background-color: #fff;
   border-left: #f0b429 7px solid;
   border-radius: 10px;
-  padding: 1r;
+  padding: 1rem;
+  display: grid;
+  grid-template-rows: 1.5em 1fr 1fr;
+  height: 15vh;
 }
 
 .project-card h4,
@@ -221,12 +224,13 @@ p {
   background-color: #e2e8f0;
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: 1fr fr;
+  grid-template-rows: 0.5fr 1fr;
+  height: 100%;
 }
 
 .announcements-cards {
-  width: 80%;
-  padding: 2rem;
+  width: 90%;
+  padding: 1rem;
   background: #fff;
   border-radius: 10px;
 }
@@ -235,6 +239,64 @@ p {
   border-bottom: 1px solid #d2d2d2;
 }
 
+.announcement-card {
+  padding: 1.5rem;
+}
+
+.announcement-card h4 {
+  margin: 0;
+}
+
 .announcements {
-  padding: 0.7rem 1rem;
+  padding: var(--padding-cards);
+}
+.trending {
+  padding: var(--padding-cards);
+}
+
+.trending-card {
+  display: grid;
+  column-gap: 8px;
+  grid-template-columns: 74px 1fr;
+  grid-template-rows: 37px 37px;
+  margin-bottom: 7px;
+}
+
+.trending-card .profile-picture {
+  grid-row: 1/3;
+  width: 64px;
+  height: 64px;
+}
+.trending-card h4 {
+  margin: 0;
+  font-weight: 500;
+  margin-top: 5px;
+}
+.trending-card p {
+}
+
+.tranding-cards {
+  background-color: #fff;
+  width: 90%;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.project-card .icon.star {
+  background: url("./images/star-plus-outline.svg");
+}
+
+.project-card .icon.eye {
+  background: url("./images/eye-plus-outline.svg");
+}
+
+.project-card .icon.share {
+  background: url("./images/share-variant-outline.svg");
+}
+.project-card .icon {
+  margin-right: 30px;
+}
+
+.project-card .icons {
+  place-self: end;
 }
